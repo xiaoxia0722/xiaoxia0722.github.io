@@ -5,12 +5,12 @@
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
   <div class="author__avatar">
-    <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}">
+    <img src="{{ author.avatar }}" class="author__avatar" alt="{% if page.lang == 'zh' %}{{ author.name_zh }}{% else %}{{ author.name_en }}{% endif %}">
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    <h3 class="author__name">{% if page.lang == 'zh' %}{{ author.name_zh }}{% else %}{{ author.name_en }}{% endif %}</h3>
+    {% if author.bio %}<p class="author__bio">{% if page.lang == 'zh' %}{{ author.bio_zh }}{% else %}{{ author.bio_en }}{% endif %}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
@@ -20,7 +20,7 @@
         <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
       {% endif %}
       {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {% if page.lang == 'zh' %}{{ author.location_zh }}{% else %}{{ author.location_en }}{% endif %}</li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>

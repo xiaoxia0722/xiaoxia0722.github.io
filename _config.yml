@@ -6,7 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Yongchao Qiao - 学术主页"
+title_en                 : "Yongchao Qiao"
+title_zh                 : "乔永超"
 description              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. "
 repository               : "xiaoxia0722/xiaoxia0722.github.io"
 google_scholar_stats_use_cdn : true
@@ -21,11 +22,15 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yongchao Qiao"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "School of Systems Science and Engineering, Sun Yat-sen University"
-  location         : "Guangzhou, Guangdong, China"
-  employer         :
+  name_en          : "Yongchao Qiao"
+  name_zh          : "乔永超"
+  avatar           : "/images/android-chrome-512x512.png"
+  bio_en           : "School of Systems Science and Engineering, Sun Yat-sen University"
+  bio_zh           : "中山大学系统科学与工程学院"
+  location_en      : "Guangzhou, Guangdong, China"
+  location_zh      : "中国 广东 广州"
+  employer_en      :
+  employer_zh      :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=68X3IpAAAAAJ"
   email            : "qiaoyc2023@163.com"
