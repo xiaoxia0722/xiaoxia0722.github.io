@@ -1,0 +1,16 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.bundle
+vendor
+.git
+.github
+node_modules
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+README-zh.md
+LICENSE
+screenshot.png

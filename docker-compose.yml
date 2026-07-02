@@ -1,0 +1,15 @@
+services:
+  jekyll:
+    build: .
+    container_name: acadhomepage-dev
+    ports:
+      - "4000:4000"   # Jekyll 站点
+      - "35729:35729" # Livereload
+    volumes:
+      - .:/site                    # 挂载整个项目，代码热更新
+      - /site/.jekyll-cache        # 匿名卷，避免污染宿主机
+      - /site/_site                # 匿名卷，避免污染宿主机
+    environment:
+      - JEKYLL_ENV=development
+    stdin_open: true
+    tty: true
