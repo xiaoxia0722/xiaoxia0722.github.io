@@ -19,7 +19,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 关于我
-乔永超，中山大学系统科学与工程学院26级博士生。主要研究方向为**计算机视觉**与**多模态学习**，涵盖语义分割、行人轨迹预测、具身智能模型等前沿课题。硕士是从[杨敬民教授](https://cs.mnnu.edu.cn/info/1070/1234.htm)，博士是从[李雄教授](https://ssse.sysu.edu.cn/teacher/667)。已发表多篇论文，Google Scholar 引用量持续增长 <a href='https://scholar.google.com/citations?user=68X3IpAAAAAJ' target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>。
+乔永超，中山大学系统科学与工程学院26级博士生。主要研究方向为**计算机视觉**与**多模态学习**，涵盖语义分割、行人轨迹预测、具身智能模型等前沿课题。硕士师从[杨敬民教授](https://cs.mnnu.edu.cn/info/1070/1234.htm)，博士师从[李雄教授](https://ssse.sysu.edu.cn/teacher/667)。已发表多篇论文，Google Scholar 引用量持续增长 <a href='https://scholar.google.com/citations?user=68X3IpAAAAAJ' target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>。
 
 <span class='anchor' id='-news'></span>
 
