@@ -16,8 +16,19 @@
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
-      {% if site.description %}
-        <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
+      {% if page.lang == "zh" %}
+        {% assign school = author.school_zh %}
+        {% assign college = author.college_zh %}
+        {% assign profile_desc = site.description_zh %}
+      {% else %}
+        {% assign school = author.school_en %}
+        {% assign college = author.college_en %}
+        {% assign profile_desc = site.description_en %}
+      {% endif %}
+      {% if school and college %}
+        <li><div style="white-space: normal; margin-bottom: 1em;">{{ school }}<br>{{ college }}</div></li>
+      {% elsif profile_desc %}
+        <li><div style="white-space: normal; margin-bottom: 1em;">{{ profile_desc | newline_to_br }}</div></li>
       {% endif %}
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {% if page.lang == 'zh' %}{{ author.location_zh }}{% else %}{{ author.location_en }}{% endif %}</li>

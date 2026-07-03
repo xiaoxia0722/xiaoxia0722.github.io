@@ -14,7 +14,12 @@
   <title>{{ site.title_en }} - Homepage</title>
 {% endif %}
 
-{% assign seo_description = page.description | default: page.excerpt | default: site.description %}
+{% if page.lang == "zh" %}
+  {% assign site_desc = site.description_zh %}
+{% else %}
+  {% assign site_desc = site.description_en %}
+{% endif %}
+{% assign seo_description = page.description | default: page.excerpt | default: site_desc %}
 {% if seo_description %}
   {% assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once %}
 {% endif %}
