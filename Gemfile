@@ -23,6 +23,9 @@ group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
-  gem 'hawkins'
   gem "csv"
+end
+
+group :development do
+  gem 'hawkins'
 end
