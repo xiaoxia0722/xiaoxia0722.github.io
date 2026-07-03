@@ -7,15 +7,23 @@ from scholarly import scholarly, ProxyGenerator
 
 
 def setup_proxy():
-    """Set up scholarly proxy via FreeProxy, with fallback."""
-    pg = ProxyGenerator()
-    success = pg.FreeProxies()
-    if success:
-        scholarly.use_proxy(pg)
-        print("[INFO] Proxy configured via FreeProxies")
-    else:
-        print("[WARN] FreeProxies unavailable, proceeding without proxy")
-    return success
+    """Set up scholarly proxy via FreeProxy, with fallback to direct connection."""
+    try:
+        pg = ProxyGenerator()
+        success = pg.FreeProxies()
+        if success:
+            scholarly.use_proxy(pg)
+            print("[INFO] Proxy configured via FreeProxies")
+            return
+    except Exception as e:
+        print(f"[WARN] FreeProxies failed: {e}")
+
+    # Fallback: direct connection without proxy (retry logic in main() still applies)
+    print("[INFO] Falling back to direct connection (no proxy)")
+    try:
+        scholarly.use_proxy(None)
+    except Exception:
+        pass
 
 
 def retry_fill(author, sections, max_retries=3):
