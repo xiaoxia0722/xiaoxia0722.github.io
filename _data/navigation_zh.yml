@@ -15,8 +15,8 @@ main:
   - title: "教育经历"
     url: "/#-educations"
 
-  - title: "邀请报告"
-    url: "/#-invited-talks"
+  # - title: "邀请报告"
+  #   url: "/#-invited-talks"
 
   - title: "实习经历"
     url: "/#-internships"

@@ -205,3 +205,78 @@ h1:before, .anchor:before {
         border-color: #bbb;
     }
 }
+
+/* ============================================================
+ * Sidebar social icon brand colors
+ * ============================================================ */
+
+.author__urls, .author__urls_sm {
+  /* Email — Gmail red */
+  .fa-envelope {
+    color: #EA4335;
+  }
+  /* GitHub */
+  .fa-github {
+    color: #181717;
+  }
+  /* Google Scholar — Google blue */
+  .fa-graduation-cap {
+    color: #4285F4;
+  }
+  /* ORCID — ORCID green */
+  .ai-orcid-square {
+    color: #A6CE39;
+  }
+  /* ResearchGate */
+  .fa-researchgate {
+    color: #00CCBB;
+  }
+  /* DBLP */
+  .ai-dblp {
+    color: #004F9F;
+  }
+  /* LinkedIn */
+  .fa-linkedin, .fa-linkedin-square {
+    color: #0A66C2;
+  }
+  /* Twitter / X */
+  .fa-twitter-square, .fa-twitter {
+    color: #1DA1F2;
+  }
+  /* PubMed */
+  .ai-pubmed-square {
+    color: #326599;
+  }
+  /* Location / map marker — red pin */
+  .fa-map-marker, .fa-map-marker-alt {
+    color: #DB4437;
+  }
+  /* Stack Overflow */
+  .fa-stack-overflow {
+    color: #F48024;
+  }
+  /* YouTube */
+  .fa-youtube {
+    color: #FF0000;
+  }
+  /* Instagram */
+  .fa-instagram {
+    color: #E4405F;
+  }
+  /* Facebook */
+  .fa-facebook-square {
+    color: #1877F2;
+  }
+  /* Weibo */
+  .fa-weibo {
+    color: #E6162D;
+  }
+  /* Steam */
+  .fa-steam-square, .fa-steam {
+    color: #000000;
+  }
+  /* Website / link */
+  .fa-link {
+    color: #555;
+  }
+}

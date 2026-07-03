@@ -30,8 +30,8 @@
       {% elsif profile_desc %}
         <li><div style="white-space: normal; margin-bottom: 1em;">{{ profile_desc | newline_to_br }}</div></li>
       {% endif %}
-      {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {% if page.lang == 'zh' %}{{ author.location_zh }}{% else %}{{ author.location_en }}{% endif %}</li>
+      {% if author.location_zh or author.location_en %}
+        <li><i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> {% if page.lang == 'zh' %}{{ author.location_zh }}{% else %}{{ author.location_en }}{% endif %}</li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
