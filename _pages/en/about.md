@@ -129,10 +129,11 @@ Qiao Yongchao is a PhD student in the School of Systems Science and Engineering,
 # 🎖 Honors and Awards
 - *2026.06* Outstanding Graduate
 - *2025.12* National Scholarship
+- *2025.12* First-Class Academic Scholarship
 - *2025.12* Merit Graduate Student
 - *2025.12* "Shizhan" Scholarship
 - *2024.12* Merit Graduate Student
-- *2024.12* First-Class Scholarship
+- *2024.12* First-Class Academic Scholarship
 <div class="foldable-hidden" id="honors-hidden" markdown="1">
 - *2023.12* First Prize, Fujian Provincial AI Creativity Competition
 </div>
