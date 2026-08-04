@@ -6,24 +6,30 @@ from datetime import datetime
 from scholarly import scholarly, ProxyGenerator
 
 
-def setup_proxy(max_attempts=3):
-    """Set up scholarly proxy via FreeProxy with retry, fallback to direct connection."""
-    for attempt in range(1, max_attempts + 1):
-        try:
-            pg = ProxyGenerator()
-            success = pg.FreeProxies()
-            if success:
-                scholarly.use_proxy(pg)
-                print("[INFO] Proxy configured via FreeProxies")
-                return True
-        except Exception as e:
-            wait = 5 * attempt
-            print(f"[WARN] FreeProxies attempt {attempt}/{max_attempts} failed: {e}")
-            if attempt < max_attempts:
-                print(f"[INFO] Retrying in {wait}s...")
-                time.sleep(wait)
+def setup_proxy():
+    """Set up scholarly proxy: Tor first, fallback to FreeProxies, then direct."""
+    # Primary: Tor (most reliable against Scholar blocking)
+    try:
+        pg = ProxyGenerator()
+        pg.Tor_Internal(tor_cmd='tor')
+        scholarly.use_proxy(pg)
+        print("[INFO] Proxy configured via Tor")
+        return True
+    except Exception as e:
+        print(f"[WARN] Tor failed: {e}")
 
-    # Fallback: direct connection
+    # Fallback: FreeProxies
+    try:
+        pg = ProxyGenerator()
+        success = pg.FreeProxies()
+        if success:
+            scholarly.use_proxy(pg)
+            print("[INFO] Proxy configured via FreeProxies")
+            return True
+    except Exception as e:
+        print(f"[WARN] FreeProxies failed: {e}")
+
+    # Final fallback: direct connection
     print("[INFO] Falling back to direct connection (no proxy)")
     try:
         scholarly.use_proxy(None)
