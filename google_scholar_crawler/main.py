@@ -6,24 +6,30 @@ from datetime import datetime
 from scholarly import scholarly, ProxyGenerator
 
 
-def setup_proxy():
-    """Set up scholarly proxy via FreeProxy, with fallback to direct connection."""
-    try:
-        pg = ProxyGenerator()
-        success = pg.FreeProxies()
-        if success:
-            scholarly.use_proxy(pg)
-            print("[INFO] Proxy configured via FreeProxies")
-            return
-    except Exception as e:
-        print(f"[WARN] FreeProxies failed: {e}")
+def setup_proxy(max_attempts=3):
+    """Set up scholarly proxy via FreeProxy with retry, fallback to direct connection."""
+    for attempt in range(1, max_attempts + 1):
+        try:
+            pg = ProxyGenerator()
+            success = pg.FreeProxies()
+            if success:
+                scholarly.use_proxy(pg)
+                print("[INFO] Proxy configured via FreeProxies")
+                return True
+        except Exception as e:
+            wait = 5 * attempt
+            print(f"[WARN] FreeProxies attempt {attempt}/{max_attempts} failed: {e}")
+            if attempt < max_attempts:
+                print(f"[INFO] Retrying in {wait}s...")
+                time.sleep(wait)
 
-    # Fallback: direct connection without proxy (retry logic in main() still applies)
+    # Fallback: direct connection
     print("[INFO] Falling back to direct connection (no proxy)")
     try:
         scholarly.use_proxy(None)
     except Exception:
         pass
+    return False
 
 
 def retry_fill(author, sections, max_retries=3):
